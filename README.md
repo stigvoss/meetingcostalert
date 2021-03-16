@@ -1,6 +1,8 @@
 # Meeting Cost Alert
 Outlook add-in that displays the cost of a meeting to the organizer when sending a meeting request.
 
+![meetingcostalert](assets/img/meetingcostalert.png)
+
 ## Features
 
 * Calculate the estimated cost from an hourly rate.
