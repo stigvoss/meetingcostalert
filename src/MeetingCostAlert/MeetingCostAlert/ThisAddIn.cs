@@ -36,11 +36,15 @@ namespace MeetingCostAlert
                 AppointmentItem appointment = meeting.GetAssociatedAppointment(false);
                 RecurrencePattern recurrancePattern = appointment.GetRecurrencePattern();
 
-                if (!IsOrganizedByCurrentUser(appointment))
+                if (meeting.Class == OlObjectClass.olMeetingCancellation)
                 {
                     return;
                 }
 
+                if (!IsOrganizedByCurrentUser(appointment))
+                {
+                    return;
+                }
                 int attendees = appointment.Recipients.Count;
                 TimeSpan duration = TimeSpan.FromMinutes(appointment.Duration);
 

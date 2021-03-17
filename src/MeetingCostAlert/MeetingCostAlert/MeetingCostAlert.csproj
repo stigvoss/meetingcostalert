@@ -227,7 +227,7 @@
     <ManifestKeyFile>MeetingCostAlert_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>10B5A704692F650EE047F90113CC2C0312097ED1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>08A947D7EA25063B24D8486F18DDECD8097F6F6D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
