@@ -41,6 +41,11 @@ namespace MeetingCostAlert
                     return;
                 }
 
+                if (meeting.Class == OlObjectClass.olMeetingCancellation)
+                {
+                    return;
+                }
+
                 int attendees = appointment.Recipients.Count;
                 TimeSpan duration = TimeSpan.FromMinutes(appointment.Duration);
 
