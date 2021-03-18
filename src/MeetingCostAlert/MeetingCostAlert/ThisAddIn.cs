@@ -36,12 +36,7 @@ namespace MeetingCostAlert
                 AppointmentItem appointment = meeting.GetAssociatedAppointment(false);
                 RecurrencePattern recurrancePattern = appointment.GetRecurrencePattern();
 
-                if (!IsOrganizedByCurrentUser(appointment))
-                {
-                    return;
-                }
-
-                if (meeting.Class == OlObjectClass.olMeetingCancellation)
+                if (meeting.Class != OlObjectClass.olMeetingRequest)
                 {
                     return;
                 }
@@ -81,17 +76,6 @@ namespace MeetingCostAlert
 
                 Cancel = result != DialogResult.Yes;
             }
-        }
-
-        private bool IsOrganizedByCurrentUser(AppointmentItem appointment)
-        {
-            if (appointment == null)
-            {
-                return false;
-            }
-
-            AddressEntry currentUser = Application.Session.CurrentUser.AddressEntry;
-            return currentUser.ID == appointment.GetOrganizer().ID;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
